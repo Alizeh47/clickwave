@@ -2,10 +2,9 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     container: {
@@ -50,11 +49,22 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        'dark-green': '#1a472a',
+        'journal-text': '#00160E',
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        franklin: ['Franklin Gothic Medium', 'Franklin Gothic', 'ITC Franklin Gothic', 'Arial', 'sans-serif'],
+        newsreader: ['Georgia', 'Times New Roman', 'serif'],
+        'old-standard': ['Georgia', 'Times New Roman', 'serif'],
+        serif: ['Georgia', 'Times New Roman', 'serif'],
+        niconne: ['var(--font-niconne)', 'cursive'],
+        noticia: ['Noticia Text', 'serif'],
       },
       keyframes: {
         "accordion-down": {
@@ -65,12 +75,22 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideIn: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        'fade-up': 'fadeUp 0.8s ease-out forwards',
+        'slide-in': 'slideIn 0.6s ease-out forwards',
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 } 
