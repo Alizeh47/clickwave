@@ -65,6 +65,9 @@ module.exports = {
         serif: ['Georgia', 'Times New Roman', 'serif'],
         niconne: ['var(--font-niconne)', 'cursive'],
         noticia: ['Noticia Text', 'serif'],
+        'pinyon-script': ['Pinyon Script', 'cursive'],
+        'im-fell-great-primer': ['IM Fell Great Primer', 'serif'],
+        'bad-script': ['Bad Script', 'cursive'],
       },
       keyframes: {
         "accordion-down": {

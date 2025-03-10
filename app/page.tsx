@@ -3,12 +3,16 @@
 import Link from 'next/link';
 import ArticleCard from '@/components/ArticleCard';
 import { MotionDiv } from '@/components/MotionWrapper';
+import AboutSection from './components/AboutSection';
+import BannerSection from './components/BannerSection';
+import TestimonialSection from '@/components/sections/TestimonialSection';
+import MainLayout from './components/layout/MainLayout';
 
 const articles = [
   {
     title: 'A Continually Unfolding History - Hillview by Made by Hand',
     excerpt: 'A design building discusses the hillside of hillview, a historic chic feature former sheep farm on Tasmania\'s Bruny Island...',
-    image: '/images/article1.jpg',
+    image: '/images/article7.jpg',
     tags: ['Design', 'Architecture'],
     href: '#'
   },
@@ -51,28 +55,7 @@ const articles = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-grid-pattern">
-      {/* Decorative Elements */}
-      <div className="fixed top-0 right-0 w-24 h-24 bg-dark-green/10 blur-3xl" />
-      <div className="fixed bottom-0 left-0 w-24 h-24 bg-dark-green/10 blur-3xl" />
-      
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b border-gray-100 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <span className="text-3xl md:text-4xl font-niconne text-dark-green px-3 py-2 hover:text-dark-green/80 transition-colors">Design Journal</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="#" className="text-gray-600 hover:text-dark-green font-noticia">Features</Link>
-              <Link href="#" className="text-gray-600 hover:text-dark-green font-noticia">Pricing</Link>
-              <Link href="#" className="text-gray-600 hover:text-dark-green font-noticia">Company</Link>
-              <Link href="#" className="text-gray-600 hover:text-dark-green font-noticia">Resources</Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
+    <MainLayout>
       <div className="relative z-10">
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -106,10 +89,10 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-niconne mb-4 text-dark-green">
                 Happy Clients and Finding Work That Motivates
               </h2>
-              <p className="mb-6 font-newsreader text-dark-green/80">
+              <p className="mb-6 font-newsreader text-dark-green">
                 Exploring the intersection of design, motivation, and client relationships in the modern digital landscape.
               </p>
-              <div className="flex items-center space-x-4 font-franklin text-dark-green/70">
+              <div className="flex items-center space-x-4 font-franklin text-dark-green">
                 <span className="text-sm">Written by Design Team</span>
                 <span className="text-sm">April 2024</span>
               </div>
@@ -227,89 +210,16 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        {/* About Section */}
+        <AboutSection />
+
+        {/* Banner Section */}
+        <BannerSection />
+
+        {/* Testimonial Section */}
+        <TestimonialSection />
       </div>
-
-      {/* Footer */}
-      <footer className="relative z-10 bg-[#00160E] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Top section with CTA */}
-          <div className="mb-20 text-center">
-            <h2 className="font-niconne text-4xl md:text-5xl mb-6">Let's get started on something great</h2>
-            <button className="px-8 py-3 border-2 border-white rounded-full hover:bg-white hover:text-[#00160E] transition-colors font-newsreader text-lg">
-              Start your 7-day free trial
-            </button>
-          </div>
-
-          {/* Links Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20">
-            {/* Product Column */}
-            <div className="space-y-6">
-              <h3 className="font-niconne text-xl">Product</h3>
-              <ul className="space-y-4">
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">Overview</Link></li>
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">Features</Link></li>
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">Solutions</Link></li>
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">Tutorials</Link></li>
-              </ul>
-            </div>
-
-            {/* Company Column */}
-            <div className="space-y-6">
-              <h3 className="font-niconne text-xl">Company</h3>
-              <ul className="space-y-4">
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">About us</Link></li>
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">Careers</Link></li>
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">Press</Link></li>
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">Contact</Link></li>
-              </ul>
-            </div>
-
-            {/* Resources Column */}
-            <div className="space-y-6">
-              <h3 className="font-niconne text-xl">Resources</h3>
-              <ul className="space-y-4">
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">Blog</Link></li>
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">Newsletter</Link></li>
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">Help centre</Link></li>
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">Support</Link></li>
-              </ul>
-            </div>
-
-            {/* Social & Legal Column */}
-            <div className="space-y-6">
-              <h3 className="font-niconne text-xl">Connect</h3>
-              <ul className="space-y-4">
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">Twitter</Link></li>
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">LinkedIn</Link></li>
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">GitHub</Link></li>
-                <li><Link href="#" className="text-white/80 hover:text-white font-newsreader">Dribbble</Link></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Bottom section with logo and copyright */}
-          <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10">
-            <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <span className="text-2xl font-niconne">Design Journal</span>
-              <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-            </div>
-            <div className="flex items-center space-x-6 font-newsreader text-white/60">
-              <Link href="#" className="hover:text-white">Terms</Link>
-              <Link href="#" className="hover:text-white">Privacy</Link>
-              <Link href="#" className="hover:text-white">Cookies</Link>
-              <span>© 2024 Design Journal</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Decorative corner */}
-        <div className="absolute bottom-0 right-0">
-          <div className="relative w-20 h-20">
-            <div className="absolute bottom-0 right-0 w-10 h-10 bg-white/20"></div>
-            <div className="absolute top-0 left-0 w-10 h-10 bg-white/20"></div>
-          </div>
-        </div>
-      </footer>
-    </main>
+    </MainLayout>
   );
 }

@@ -1,8 +1,23 @@
-import { Inter } from 'next/font/google';
+import { Inter, Pinyon_Script, IM_Fell_Great_Primer, Bad_Script } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
+const pinyonScript = Pinyon_Script({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-pinyon-script'
+});
+const imFellGreatPrimer = IM_Fell_Great_Primer({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-im-fell-great-primer'
+});
+const badScript = Bad_Script({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-bad-script'
+});
 
 // Load Niconne font locally
 const niconne = localFont({ 
@@ -22,7 +37,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${niconne.variable}`}>{children}</body>
+      <body className={`${inter.className} ${niconne.variable} ${pinyonScript.variable} ${imFellGreatPrimer.variable} ${badScript.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
